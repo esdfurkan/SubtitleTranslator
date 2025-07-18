@@ -37,8 +37,8 @@ Want to run AI Subtitle Translator on your own server? Follow these simple steps
 1.  **Clone the Repository**
 
     ```bash
-    git clone [https://github.com/your-username/your-repo.git](https://github.com/your-username/your-repo.git)
-    cd your-repo
+    git clone [https://github.com/esdfurkan/SubtitleTranslator.git](https://github.com/esdfurkan/SubtitleTranslator.git)
+    cd SubtitleTranslator
     ```
 
 2.  **Install Dependencies**
@@ -71,7 +71,25 @@ Want to run AI Subtitle Translator on your own server? Follow these simple steps
     ```
 
     This creates a `dist` folder with your production-ready files, which you can deploy to any static hosting service.
+6. Example vite.config.js
+```
+    import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    host: '0.0.0.0', // This listens on all available network interfaces
+    port: 5173,      // You can specify the port
+    strictPort: true,
+    hmr: {
+      host: 'ass.xn--furkan-8r4ea.net',
+      protocol: 'ws',
+    },
+  }
+})
+```
 -----
 
 ## 📝 How it Works
