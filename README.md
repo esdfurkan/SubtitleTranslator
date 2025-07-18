@@ -8,7 +8,7 @@ Welcome to **AI Subtitle Translator** – an advanced, web-based tool that lever
 
 *You can try out the live demo here:*
 
-> **[Demo URL – Coming Soon\!]**
+> **[Demo URL – https://ass.xn--furkan-8r4ea.net]**
 
 *(This section can be updated with your live deployment URL.)*
 
