@@ -145,7 +145,7 @@ const config = {
 ├── tailwind.config.js
 ├── vite.config.js
 └── README.md
-
+```
 🤝 Contributing
 
 Contributions are welcome! Please feel free to open an issue to report a bug or suggest a feature, or submit a pull request with your improvements.
