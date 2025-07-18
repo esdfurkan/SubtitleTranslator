@@ -32,32 +32,8 @@ Welcome to **AI Subtitle Translator** – an advanced, web-based tool that lever
 
 
 ```mermaid
-flowchart TD
-    A[Upload Subtitle File] --> B[File Read: Browser loads content]
-    B --> C[Format Detection (.ass or .srt)]
-    C --> D[Dialogue Extraction]
-    D --> E[Create "Blueprint" for file structure]
-    E --> F[Update React State (dialogues + rebuild function)]
+<img width="1024" height="1536" alt="4ebe4889-5b09-4a13-866f-38b72ba221f3" src="https://github.com/user-attachments/assets/9e2d1574-c54d-4420-80ba-1f9cbde52ce7" />
 
-    F --> G[User Clicks "Translate"]
-    G --> H[Bundle dialogue lines (with <--> separators)]
-    H --> I[Create AI Prompt (instructions + text)]
-    I --> J[Send Request to OpenRouter API]
-
-    J --> K[Receive Translated Text from AI]
-    K --> L[Unpack Text (split by <--> separators)]
-    L --> M[Safety Check: Compare sent/received line counts]
-
-    M -- All lines correct --> N[Call Rebuild Function]
-    N --> O[Rebuild original file structure with translated dialogues]
-    O --> P[Display Final Output in Result Box]
-
-    M -- Missing lines --> Q[Show missing lines in Review Panel]
-    Q --> R[User Clicks "Retry"]
-    R --> S[Send only missing lines to OpenRouter API]
-    S --> T[Receive new translations for missing lines]
-    T --> U[Intelligently merge new lines into translation]
-    U --> V[Rebuild file & display corrected output]
 ```
 
 
