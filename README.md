@@ -128,7 +128,7 @@ const config = {
     defaultAssTitleTemplate: "Translated by AI to ${language}"
 };
 ```
-
+```
 📂 Project Structure
 
 .
