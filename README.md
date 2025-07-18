@@ -32,7 +32,18 @@ Welcome to **AI Subtitle Translator** – an advanced, web-based tool that lever
 
 
 ```mermaid
-<img width="1024" height="1536" alt="4ebe4889-5b09-4a13-866f-38b72ba221f3" src="https://github.com/user-attachments/assets/9e2d1574-c54d-4420-80ba-1f9cbde52ce7" />
+sequenceDiagram
+  participant User
+  participant App
+  participant API
+
+  User->>App: Upload Subtitle File
+  App->>App: Parse & Extract Dialogue
+  App->>API: Send Text for Translation
+  API-->>App: Return Translated Text
+  App->>App: Rebuild File
+  App->>User: Show Final Output
+
 
 ```
 
