@@ -31,23 +31,6 @@ Welcome to **AI Subtitle Translator** – an advanced, web-based tool that lever
 -----
 
 
-```mermaid
-sequenceDiagram
-  participant User
-  participant App
-  participant API
-
-  User->>App: Upload Subtitle File
-  App->>App: Parse & Extract Dialogue
-  App->>API: Send Text for Translation
-  API-->>App: Return Translated Text
-  App->>App: Rebuild File
-  App->>User: Show Final Output
-
-
-```
-
-
 ## 🖥️ Self-Host & Installation
 
 Want to run AI Subtitle Translator on your own server? Follow these simple steps to set it up locally. You will need [Node.js](https://nodejs.org/) installed.
@@ -121,6 +104,21 @@ AI Subtitle Translator makes the translation process seamless:
 5.  **Rebuild:** The application meticulously reconstructs the original file, inserting the translated text back into its correct place, ensuring no formatting is lost.
 6.  **Review & Download:** The user can review the translated text, re-translate any lines the AI missed, and download the final, perfectly formatted file.
 
+```mermaid
+sequenceDiagram
+  participant User
+  participant App
+  participant API
+
+  User->>App: Upload Subtitle File
+  App->>App: Parse & Extract Dialogue
+  App->>API: Send Text for Translation
+  API-->>App: Return Translated Text
+  App->>App: Rebuild File
+  App->>User: Show Final Output
+
+
+```
 -----
 
 ## 🔧 Customization
