@@ -30,6 +30,37 @@ Welcome to **AI Subtitle Translator** – an advanced, web-based tool that lever
 
 -----
 
+
+```mermaid
+flowchart TD
+    A[Upload Subtitle File] --> B[File Read: Browser loads content]
+    B --> C[Format Detection (.ass or .srt)]
+    C --> D[Dialogue Extraction]
+    D --> E[Create "Blueprint" for file structure]
+    E --> F[Update React State (dialogues + rebuild function)]
+
+    F --> G[User Clicks "Translate"]
+    G --> H[Bundle dialogue lines (with <--> separators)]
+    H --> I[Create AI Prompt (instructions + text)]
+    I --> J[Send Request to OpenRouter API]
+
+    J --> K[Receive Translated Text from AI]
+    K --> L[Unpack Text (split by <--> separators)]
+    L --> M[Safety Check: Compare sent/received line counts]
+
+    M -- All lines correct --> N[Call Rebuild Function]
+    N --> O[Rebuild original file structure with translated dialogues]
+    O --> P[Display Final Output in Result Box]
+
+    M -- Missing lines --> Q[Show missing lines in Review Panel]
+    Q --> R[User Clicks "Retry"]
+    R --> S[Send only missing lines to OpenRouter API]
+    S --> T[Receive new translations for missing lines]
+    T --> U[Intelligently merge new lines into translation]
+    U --> V[Rebuild file & display corrected output]
+```
+
+
 ## 🖥️ Self-Host & Installation
 
 Want to run AI Subtitle Translator on your own server? Follow these simple steps to set it up locally. You will need [Node.js](https://nodejs.org/) installed.
