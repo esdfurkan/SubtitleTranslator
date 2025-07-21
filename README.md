@@ -127,8 +127,6 @@ export default {
   plugins: [],
 }
 ```
-10. index.css
-
 ## 📝 How it Works
 ```css
 
