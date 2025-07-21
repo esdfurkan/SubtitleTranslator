@@ -27,6 +27,9 @@ Welcome to **AI Subtitle Translator** – an advanced, web-based tool that lever
       - **Custom .ass/.ssa Title:** Dynamically set the `Title:` field for `.ass` and `.ssa` files directly from the UI.
   - **Modern UI:** A clean, responsive, and animated interface built with Tailwind CSS.
   - **Easy Configuration:** A single `config` object at the top of `App.jsx` allows for easy branding and default setting changes.
+  - **Create account.
+  - **Support invite link.
+  - ** Please don't live this on the internet. If you do, disable registration immediately. Some AIs can crash your server!
 
 -----
 
@@ -70,7 +73,13 @@ Want to run AI Subtitle Translator on your own server? Follow these simple steps
     ```bash
     npm run build
     ```
-
+**Build backend
+ ```bash
+npm init -y
+ ```
+ ```bash
+npm install bcrypt@^6.0.0 cors@^2.8.5 dotenv@^17.2.0 express@^5.1.0 jsonwebtoken@^9.0.2 pg@^8.16.3 qrcode@^1.5.4 speakeasy@^2.0.0
+```
     This creates a `dist` folder with your production-ready files, which you can deploy to any static hosting service.
 6. Example vite.config.js
 ```
@@ -91,9 +100,37 @@ export default defineConfig({
   }
 })
 ```
+7 example .env file
+```env
+ENCRYPTION_KEY=
+ACCESS_TOKEN_SECRET=
+REFRESH_TOKEN_SECRET=
+PRE_AUTH_TOKEN_SECRET=
+DATABASE_URL=postgresql://postgresurl
+```
 -----
+8.Nginx Proxypass
+```nginx
+work in progress
+```
+9. tailwind.config.js
+```js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+10. index.css
 
 ## 📝 How it Works
+```css
 
 AI Subtitle Translator makes the translation process seamless:
 
@@ -127,40 +164,25 @@ Customizing the application with your own branding and defaults is simple. Open 
 
 ```javascript
 const config = {
-    // 1. Your GitHub repository URL
-    githubRepoUrl: "[https://github.com/your-username/your-repo](https://github.com/your-username/your-repo)",
+    // --- Login & Backend ---
+    enableRegistration: true,
+    backendApiBaseUrl: "APİURL", // Updated to match your backend
+    
+    // --- Branding & Links ---
+    githubRepoUrl: "https://github.com/your-username/your-repo",
+    githubRibbonImage: "/Github.png",
+    footerText: "© 2025 Furkan",
+    logoImage: "/sol.png",
+    logoUrl: "https://your-website.com",
 
-    // 2. Your GitHub ribbon image. Place the image in the `public` folder.
-    githubRibbonImage: "/github-ribbon.png",
-
-    // 3. The text that appears in the footer
-    footerText: "© 2025 Your Company Name. All Rights Reserved.",
-
-    // 4. Default AI model and language when the app loads
+    // --- App Defaults ---
     defaultModel: 'anthropic/claude-3-haiku',
     defaultLanguage: 'Spanish',
+    defaultAssTitleTemplate: "Translated by AI to ${language}",
 
-    // 5. Default title for new .ass/.ssa subtitle files
-    defaultAssTitleTemplate: "Translated by AI to ${language}"
+    // --- Decorative Images ---  /public/images/random/FILENAME file names example
+    randomImages: ['85dc2986-ae1e-4be1-9b46-1958254b3cb0.png', '5463ea9b-533d-414b-8c9f-b5595358f067.png', '959adc11-0782-40a8-8e00-18951742bdd9.png', '931e51db-d4a6-4c87-bf38-c8813f375983.png', '3ca94fd2-9a4d-4b1b-8b1e-9f76a39dc9b5.png', '478b45d6-5f23-4844-9606-45f7f24a5fc2.png', '7185bd14-4276-4420-a291-01c1394a2557.png']
 };
-```
-```
-📂 Project Structure
-
-.
-├── public/
-│   └── github-ribbon.png  // Your static assets go here
-├── src/
-│   ├── App.jsx            // Main application component and logic
-│   ├── index.css          // Tailwind CSS directives
-│   └── main.jsx           // React entry point
-├── .gitignore
-├── index.html
-├── package.json
-├── postcss.config.js
-├── tailwind.config.js
-├── vite.config.js
-└── README.md
 ```
 🤝 Contributing
 
