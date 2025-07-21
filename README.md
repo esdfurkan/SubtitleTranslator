@@ -82,7 +82,7 @@ npm install bcrypt@^6.0.0 cors@^2.8.5 dotenv@^17.2.0 express@^5.1.0 jsonwebtoken
 ```
     This creates a `dist` folder with your production-ready files, which you can deploy to any static hosting service.
 6. Example vite.config.js
-```
+```js
     import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
@@ -138,7 +138,7 @@ AI Subtitle Translator makes the translation process seamless:
 4.  **Translate:** The dialogue text is sent to the selected AI model.
 5.  **Rebuild:** The application meticulously reconstructs the original file, inserting the translated text back into its correct place, ensuring no formatting is lost.
 6.  **Review & Download:** The user can review the translated text, re-translate any lines the AI missed, and download the final, perfectly formatted file.
-
+```
 ```mermaid
 sequenceDiagram
   participant User
@@ -153,7 +153,6 @@ sequenceDiagram
   App->>User: Show Final Output
 
 
-```
 ```
 -----
 
