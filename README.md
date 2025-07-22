@@ -30,6 +30,7 @@ Welcome to **AI Subtitle Translator** – an advanced, web-based tool that lever
   - **Create account.
   - **Support invite link.
   - ** Please don't live this on the internet. If you do, disable registration immediately. Some AIs can crash your server!
+  - **~2FA support??~
 
 -----
 
